@@ -1,0 +1,200 @@
+{
+  "name": "create",
+  "description": "Create a raid",
+  "options": [
+    {
+      "name": "difficulty",
+      "description": "Select a trial difficulty",
+      "type": 3,
+      "required": true,
+      "choices": [
+        {
+          "name": "Veteran",
+          "value": "V"
+        },
+        {
+          "name": "Hard mode",
+          "value": "HM"
+        },
+        {
+          "name": "Normal",
+          "value": "N"
+        }
+      ]
+    },
+    {
+      "name": "trial",
+      "description": "Select a trial",
+      "type": 3,
+      "required": true,
+      "choices": [
+        {
+          "name": "Aetherian Archive",
+          "value": "AA"
+        },
+        {
+          "name": "Asylum Sanctorium +0",
+          "value": "AS+0"
+        },
+        {
+          "name": "Asylum Sanctorium +1",
+          "value": "AS+1"
+        },
+        {
+          "name": "Asylum Sanctorium +2",
+          "value": "AS+2"
+        },
+        {
+          "name": "Cloudrest +0",
+          "value": "CR+0"
+        },
+        {
+          "name": "Cloudrest +1",
+          "value": "CR+1"
+        },
+        {
+          "name": "Cloudrest +2",
+          "value": "CR+2"
+        },
+        {
+          "name": "Cloudrest +3",
+          "value": "CR+3"
+        },
+        {
+          "name": "Halls of Fabrication",
+          "value": "HoF"
+        },
+        {
+          "name": "Hel-ra Citadel",
+          "value": "HRC"
+        },
+        {
+          "name": "Kyne's Aegis",
+          "value": "KA"
+        },
+        {
+          "name": "Kyne's Aegis Yandir HM",
+          "value": "KA+Y"
+        },
+        {
+          "name": "Kyne's Aegis Yandir & Vrol HM",
+          "value": "KA+YV"
+        },
+        {
+          "name": "Rockgrove",
+          "value": "RG"
+        },
+        {
+          "name": "Rockgrove Oax HM",
+          "value": "RG+O"
+        },
+        {
+          "name": "Rockgrove Oax & Bahsei HM",
+          "value": "RG+OB"
+        },
+        {
+          "name": "Sanctum Ophidia",
+          "value": "SO"
+        },
+        {
+          "name": "Sunspire",
+          "value": "SS"
+        },
+        {
+          "name": "Sunspire Lokke HM",
+          "value": "SS+L"
+        },
+        {
+          "name": "Sunspire Lokke & Yoln HM",
+          "value": "SS+LY"
+        },
+        {
+          "name": "Sunspire Yoln HM",
+          "value": "SS+Y"
+        }
+      ]
+    },
+    {
+      "name": "date",
+      "description": "Enter a date of the format Month/Day/Year (4 digits). For example: 4/20/2069",
+      "type": 3,
+      "required": true
+    },
+    {
+      "name": "time",
+      "description": "Enter a time with am/pm, like 11:00pm or 7:15am",
+      "type": 3,
+      "required": true
+    },
+    {
+      "name": "timezone",
+      "description": "Select a timezone",
+      "type": 3,
+      "required": true,
+      "choices": [
+        {
+          "name": "Pacific Daylight Time",
+          "value": "PDT"
+        },
+        {
+          "name": "Pacific Standard Time",
+          "value": "PST"
+        },
+        {
+          "name": "Mountain Daylight Time",
+          "value": "MDT"
+        },
+        {
+          "name": "Mountain Standard Time",
+          "value": "MST"
+        },
+        {
+          "name": "Central Daylight Time",
+          "value": "CDT"
+        },
+        {
+          "name": "Central Standard Time",
+          "value": "CST"
+        },
+        {
+          "name": "Eastern Daylight Time",
+          "value": "EDT"
+        },
+        {
+          "name": "Eastern Standard Time",
+          "value": "EST"
+        }
+      ]
+    },
+    {
+      "name": "roles",
+      "description": "List the roles allowed for this raid separated by a comma. For example Role 1, Role 2, Role 3",
+      "type": 3,
+      "required": true
+    },
+    {
+      "name": "melee_dps",
+      "description": "The number of melee DPS for the raid",
+      "type": 4,
+      "required": false
+    },
+    {
+      "name": "ranged_dps",
+      "description": "The number of ranged DPS for the raid",
+      "type": 4,
+      "required": false
+    },
+    {
+      "name": "flex_dps",
+      "description": "The number of flex DPS for the raid",
+      "type": 4,
+      "required": false
+    },
+    {
+      "name": "cro_dps",
+      "description": "The number of cro DPS for the raid",
+      "type": 4,
+      "required": false
+    }
+  ]
+}
