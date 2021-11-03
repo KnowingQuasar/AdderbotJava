@@ -1,9 +1,11 @@
 package com.adderbot;
 
 import com.adderbot.listeners.SlashCommandListener;
+import com.mongodb.reactivestreams.client.MongoClient;
 import discord4j.core.DiscordClientBuilder;
 import discord4j.core.event.domain.interaction.ChatInputInteractionEvent;
 import discord4j.rest.RestClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
@@ -14,6 +16,13 @@ import reactor.core.publisher.Mono;
 @SpringBootApplication
 @ConfigurationPropertiesScan
 public class AdderBot {
+    final MongoClient mongoClient;
+
+    @Autowired
+    public AdderBot(MongoClient mongoClient) {
+        this.mongoClient = mongoClient;
+    }
+
     public static void main(String[] args) {
         // Start Spring
         ApplicationContext springContext = new SpringApplicationBuilder(AdderBot.class)
