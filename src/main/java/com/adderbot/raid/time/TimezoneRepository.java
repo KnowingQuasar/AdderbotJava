@@ -1,4 +1,4 @@
-package com.adderbot.time;
+package com.adderbot.raid.time;
 
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 

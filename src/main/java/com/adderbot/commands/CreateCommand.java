@@ -1,23 +1,27 @@
 package com.adderbot.commands;
 
-import com.adderbot.raid.Raid;
+import com.adderbot.commands.common.OptionType;
+import com.adderbot.raid.RaidDto;
 import com.adderbot.raid.RaidService;
-import com.adderbot.raid.RaidValidator;
+import com.adderbot.raid.time.TimeService;
+import com.adderbot.utils.ErrorUtils;
 import discord4j.core.event.domain.interaction.ChatInputInteractionEvent;
 import discord4j.core.object.entity.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
+
 @Component
 public class CreateCommand implements SlashCommand {
     private final RaidService raidService;
-    private final RaidValidator raidValidator;
+    private final TimeService timeService;
 
     @Autowired
-    public CreateCommand(RaidService raidService, RaidValidator raidValidator) {
+    public CreateCommand(RaidService raidService, TimeService timeService) {
         this.raidService = raidService;
-        this.raidValidator = raidValidator;
+        this.timeService = timeService;
     }
 
     @Override
@@ -27,25 +31,36 @@ public class CreateCommand implements SlashCommand {
 
     @Override
     public Mono<Void> handle(ChatInputInteractionEvent event) {
-        event.reply().withContent("Creating raid...").block();
-        Message message = event.getReply().block();
-        if (message == null) {
-            event.editReply("Error creating raid. Contact the developer for help.").block();
-            return Mono.empty();
-        }
+        Long timestamp = timeService.createTimestamp(getOptionValue(event, "date", OptionType.STRING).toString(),
+                getOptionValue(event, "time", OptionType.STRING).toString().toUpperCase(),
+                getOptionValue(event, "timezone", OptionType.STRING).toString());
 
-        Raid raid = Raid.builder()
-                .channelId(event.getInteraction().getChannelId().asString())
-                .messageId(message.getId().asString())
-                .raidTypeId(getOptionValue(event, "trial").toString())
-                .date(getOptionValue(event, "date").toString())
-                .time(getOptionValue(event, "time").toString())
-                .timezoneId(getOptionValue(event, "timezone").toString())
+        RaidDto raid = RaidDto.builder()
+                .id(event.getInteraction().getChannelId().asString())
+                .difficulty(getOptionValue(event, "difficulty", OptionType.STRING).toString())
+                .raidTypeId(getOptionValue(event, "trial", OptionType.STRING).toString())
+                .timestampInSeconds(timestamp)
                 .build();
 
-        raidValidator.validate(raid, errors);
+        if (errors.isEmpty()) {
+            event.reply().withContent("Success").block(Duration.ofSeconds(2));
+            Message message = event.getReply().block(Duration.ofSeconds(2));
 
-        return event.reply()
-                .withContent(raid.toString());
+            if (message == null) {
+                event.editReply("Error creating raid: message was null. " + ErrorUtils.devHelpText);
+                return Mono.empty();
+            }
+
+            raid.setMessageId(message.getId().asString());
+
+            if (errors.isEmpty()) {
+                raidService.toString();
+            } else {
+                event.editReply(ErrorUtils.generateErrorMessages(errors));
+            }
+        } else {
+            return event.reply().withContent("Fail");
+        }
+        return Mono.empty();
     }
 }

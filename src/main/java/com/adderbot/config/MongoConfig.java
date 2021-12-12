@@ -15,7 +15,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 @Configuration
-@EnableReactiveMongoRepositories
+@EnableReactiveMongoRepositories(basePackages = "com.adderbot")
 public class MongoConfig extends AbstractReactiveMongoConfiguration {
     private final MongoDetails mongoDetails;
 
