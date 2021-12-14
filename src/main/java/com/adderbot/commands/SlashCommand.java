@@ -1,16 +1,13 @@
 package com.adderbot.commands;
 
 import com.adderbot.commands.common.OptionType;
-import com.adderbot.errors.Error;
 import discord4j.core.event.domain.interaction.ChatInputInteractionEvent;
 import discord4j.core.object.command.ApplicationCommandInteractionOption;
 import discord4j.core.object.command.ApplicationCommandInteractionOptionValue;
 import lombok.NonNull;
 import reactor.core.publisher.Mono;
 
-import java.util.HashSet;
 import java.util.Optional;
-import java.util.Set;
 
 /**
  * A simple interface defining our slash command class contract.
@@ -18,8 +15,6 @@ import java.util.Set;
  *  and a handle() method which will house all the logic for processing each command.
  */
 public interface SlashCommand {
-    Set<Error> errors = new HashSet<>();
-
     String getName();
 
     Mono<Void> handle(ChatInputInteractionEvent event);

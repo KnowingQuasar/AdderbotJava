@@ -1,4 +1,4 @@
-package com.adderbot.raid.time;
+package com.adderbot.time;
 
 import lombok.Getter;
 import org.springframework.data.annotation.Id;

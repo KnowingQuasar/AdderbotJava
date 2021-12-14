@@ -1,11 +1,17 @@
 package com.adderbot.raid;
 
-import lombok.Builder;
+import com.adderbot.raid.type.RaidType;
+import discord4j.core.object.entity.User;
 import lombok.Data;
 
-@Builder
+import java.time.ZonedDateTime;
+
 @Data
 public class Raid {
+    /**
+     * Id of the raid lead
+     */
+    private User lead;
     /**
      * Id of the channel that the raid is housed in
      */
@@ -19,19 +25,19 @@ public class Raid {
      */
     private String difficulty;
     /**
-     * The id of the type of the raid (AA, HRC, etc)
+     * The raid type of the raid
      */
-    private String raidTypeId;
+    private RaidType raidType;
     /**
-     * The date of the raid
+     * The DateTime object for the raid
      */
-    private String date;
-    /**
-     * The time of the raid
-     */
-    private String time;
-    /**
-     * The timezoneId of the raid (EDT, MST, etc)
-     */
-    private String timezoneId;
+    private ZonedDateTime zonedDateTime;
+
+    public Raid(User lead, String channelId, String difficulty, RaidType raidType, ZonedDateTime zonedDateTime) {
+        this.lead = lead;
+        this.channelId = channelId;
+        this.difficulty = difficulty;
+        this.raidType = raidType;
+        this.zonedDateTime = zonedDateTime;
+    }
 }
