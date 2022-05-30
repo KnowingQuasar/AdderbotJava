@@ -35,6 +35,7 @@ public class RaidService {
 
     /**
      * Autowired constructor wiring in the RaidRepository
+     *
      * @param raidRepository Autowired RaidRespository
      */
     @Autowired

@@ -29,7 +29,6 @@ public class AdderBot {
                 .build()
                 .run(args);
 
-
         // Login to Discord
         DiscordClientBuilder.create(System.getenv("AdderbotTestToken")).build()
                 .withGateway(gatewayClient -> {

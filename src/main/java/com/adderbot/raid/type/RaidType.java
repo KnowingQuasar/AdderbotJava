@@ -10,8 +10,16 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class RaidType {
     @Id
     private String id;
+
     @Field(name = "name")
     private String name;
+
     @Field(name = "embed_color")
-    private  String embedColor;
+    private String embedColor;
+
+    @Field(name = "hm")
+    private DifficultyRepresentation hm;
+
+    @Field(name = "non_hm")
+    private DifficultyRepresentation non_hm;
 }

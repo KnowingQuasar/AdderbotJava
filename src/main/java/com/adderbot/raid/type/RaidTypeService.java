@@ -1,19 +1,15 @@
 package com.adderbot.raid.type;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class RaidTypeService {
     /**
      * Repository used for Raids
      */
     private final RaidTypeRepository raidTypeRepository;
-
-    @Autowired
-    public RaidTypeService(RaidTypeRepository raidTypeRepository) {
-        this.raidTypeRepository = raidTypeRepository;
-    }
 
     public RaidType getRaidTypeById(String raidTypeId) {
         return raidTypeRepository.findById(raidTypeId).block();
