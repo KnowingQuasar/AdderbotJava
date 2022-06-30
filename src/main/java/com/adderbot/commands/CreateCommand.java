@@ -21,7 +21,7 @@ public class CreateCommand implements SlashCommand {
     private final RaidService raidService;
 
     @Autowired
-    public CreateCommand(RaidService raidService, TimeService timeService) {
+    public CreateCommand(RaidService raidService) {
         this.raidService = raidService;
     }
 

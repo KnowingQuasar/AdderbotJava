@@ -4,11 +4,13 @@ import com.adderbot.raid.type.RaidType;
 import discord4j.core.object.entity.User;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.time.ZonedDateTime;
+import java.util.Map;
 
 @Document("raid")
 @Data
@@ -54,6 +56,34 @@ public class Raid {
      * The DateTime object for the raid
      */
     private ZonedDateTime zonedDateTime;
+
+    @Field(name = "date_timestamp")
+    private Long timestampInSeconds;
+
+    /**
+     * Roles that are still available in the raid
+     */
+    @Field(name = "available_roles")
+    private Map<String, Integer> availableRoles;
+
+    /**
+     * Map of players
+     */
+    @Field(name = "players")
+    private Map<String, String> players;
+
+    @PersistenceConstructor
+    public Raid(String id, String messageId, String difficulty, String raidTypeId, Long timestampInSeconds,
+                   Map<String, Integer> availableRoles, Map<String, String> players) {
+        super();
+        this.id = id;
+        this.messageId = messageId;
+        this.difficulty = difficulty;
+        this.raidTypeId = raidTypeId;
+        this.timestampInSeconds = timestampInSeconds;
+        this.availableRoles = availableRoles;
+        this.players = players;
+    }
 
     public Raid(User lead, String channelId, String difficulty, RaidType raidType, ZonedDateTime zonedDateTime) {
         this.lead = lead;
