@@ -34,6 +34,7 @@ public class CreateCommand implements SlashCommand {
     public Mono<Void> handle(ChatInputInteractionEvent event) {
         try {
             Raid raid = getRaidService().createFromCommand(event.getInteraction().getUser(),
+                    event.getInteraction().getGuildId().get(),
                     event.getInteraction().getChannelId().asString(),
                     getOptionValue(event, "difficulty", OptionType.STRING).toString(),
                     getOptionValue(event, "trial", OptionType.STRING).toString(),

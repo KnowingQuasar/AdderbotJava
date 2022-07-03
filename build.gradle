@@ -14,9 +14,9 @@ repositories {
 dependencies {
     implementation 'com.discord4j:discord4j-core:3.2.2'
     implementation 'ch.qos.logback:logback-classic:1.2.11'
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.7'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.7.0'
     // https://mvnrepository.com/artifact/org.springframework.data/spring-data-mongodb
-    implementation 'org.springframework.data:spring-data-mongodb:3.3.4'
+    implementation 'org.springframework.data:spring-data-mongodb:3.4.0'
     // https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync
     implementation 'org.mongodb:mongodb-driver-sync:4.6.0'
     // https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-reactivestreams
@@ -25,7 +25,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.24'
 
     // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-configuration-processor
-    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor:2.6.7'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor:2.7.0'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
 
