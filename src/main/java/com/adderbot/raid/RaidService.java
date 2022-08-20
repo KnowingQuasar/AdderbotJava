@@ -4,6 +4,7 @@ import com.adderbot.errors.ValidationException;
 import com.adderbot.raid.role.RaidRoleType;
 import com.adderbot.raid.role.RaidRoleTypeService;
 import com.adderbot.raid.type.RaidType;
+import com.adderbot.raid.type.RaidTypeRepository;
 import com.adderbot.raid.type.RaidTypeService;
 import com.adderbot.time.TimeService;
 import com.adderbot.utils.ErrorUtils;
@@ -21,13 +22,8 @@ import java.time.ZonedDateTime;
 import java.util.*;
 
 @Service
-@Getter
 @RequiredArgsConstructor
 public class RaidService {
-    /**
-     * Repository used for Raids
-     */
-    private final RaidRepository raidRepository;
 
     /**
      * TimeService used to parse timezones and times
@@ -44,16 +40,16 @@ public class RaidService {
      */
     private final RaidRoleTypeService raidRoleTypeService;
 
-    public String generateRaidName(Raid raid) {
-        return raid.getDifficulty().toLowerCase(Locale.ROOT) + raid.getRaidType().getId()
-                + (raid.getRaidType().getId().equals("HM") ? " HM" : "");
+    public String generateRaidName(Raid raid, RaidType raidType) {
+        return raid.getDifficulty().toLowerCase(Locale.ROOT) + raidType.getId()
+                + (raidType.getId().equals("HM") ? " HM" : "");
     }
 
     public Raid createFromCommand(User user, Snowflake guildId, String channelId, String difficulty, String trial, String date,
-                                  String time, String timezone, String roles, Integer numberMelee, Integer numberRanged,
+                                  String time, String timezone, List<String> roles, Integer numberMelee, Integer numberRanged,
                                   Integer numberFlex, Integer numberCros) throws ValidationException {
 
-        ZonedDateTime timestamp = getTimeService().createTimestamp(date, time, timezone);
+        ZonedDateTime timestamp = timeService.createTimestamp(date, time, timezone);
 
         if (guildId == null) {
             throw new ValidationException(ErrorUtils.createError + " This command is only available within a Discord server.");
@@ -77,36 +73,39 @@ public class RaidService {
 
         HashMap<String, RosterRole> roster = new HashMap<>();
 
-        if (difficulty.equalsIgnoreCase("HM")) {
-            raidType.getHm().getRaid_roles().forEach((String role, Integer numAvailable) -> roster.put(role, new RosterRole(numAvailable)));
-        } else {
-            raidType.getNon_hm().getRaid_roles().forEach((String role, Integer numAvailable) -> roster.put(role, new RosterRole(numAvailable)));
+        try {
+            if (difficulty.equalsIgnoreCase("HM")) {
+                raidType.getHm().getRaid_roles().forEach((String role, Integer numAvailable) -> roster.put(role, new RosterRole(numAvailable)));
+            } else {
+                raidType.getNon_hm().getRaid_roles().forEach((String role, Integer numAvailable) -> roster.put(role, new RosterRole(numAvailable)));
+            }
+        } catch (NullPointerException npe) {
+            throw new ValidationException(ErrorUtils.createError + " Invalid combination of raid type and difficulty. Please check what trial and difficulty you have selected.");
         }
 
         return Raid.builder()
-                .lead(user)
                 .leadId(user.getId().asString())
                 .guildId(guildId.asString())
                 .difficulty(difficulty)
                 .availableRoles(new HashMap<>())
                 .timestampInSeconds(timestamp.toEpochSecond())
-                .zonedDateTime(timestamp)
                 .id(channelId)
                 .roster(roster)
-                .raidType(raidType)
                 .raidTypeId(raidType.getId())
                 .build();
     }
 
     public EmbedCreateSpec buildEmbed(Raid raid) {
 
+        RaidType raidType = raidTypeService.getRaidTypeById(raid.getRaidTypeId());
+
         StringBuilder raidStringBuilder = new StringBuilder();
         raidStringBuilder.append("**Trial:** ")
-                .append(generateRaidName(raid))
+                .append(generateRaidName(raid, raidType))
                 .append("\n**When (adjusted to your timezone):** <t:")
                 .append(raid.getTimestampInSeconds())
                 .append(":F>\n**Leader:** ")
-                .append(raid.getLead().getMention())
+                .append(String.format("<@!%s>", raid.getLeadId()))
                 .append("\n")
                 .append("**-----------------------------------------------**\n");
 
@@ -119,11 +118,11 @@ public class RaidService {
             Integer displayPriority = raidRoleType.getDisplayPriority();
 
             for (String player : rosterRole.getPlayers()) {
-                roleStringQueue.add(Pair.of(String.format("%s %s : <@!%s>", raidRoleType.getDisplayName(), raidRoleType.getDisplayEmoji(), player), displayPriority));
+                roleStringQueue.add(Pair.of(String.format("%s **%s:** <@!%s>", raidRoleType.getDisplayEmoji(), raidRoleType.getDisplayName(), player), displayPriority));
             }
 
             for (int i = 0; i < rosterRole.getNumberAvailable(); i++) {
-                roleStringQueue.add(Pair.of(String.format("%s %s :", raidRoleType.getDisplayName(), raidRoleType.getDisplayEmoji()), displayPriority));
+                roleStringQueue.add(Pair.of(String.format("%s **%s:**", raidRoleType.getDisplayEmoji(), raidRoleType.getDisplayName()), displayPriority));
             }
         });
 
@@ -132,8 +131,8 @@ public class RaidService {
         }
 
         return EmbedCreateSpec.builder()
-                .title(raid.getRaidType().getName())
-                .color(Color.of(Integer.decode(raid.getRaidType().getEmbedColor())))
+                .title(raidType.getName())
+                .color(Color.of(Integer.decode(raidType.getEmbedColor())))
                 .description(raidStringBuilder.toString())
                 .build();
     }

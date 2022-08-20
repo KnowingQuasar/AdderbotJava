@@ -1,21 +1,15 @@
 package com.adderbot.raid;
 
-import com.adderbot.raid.type.RaidType;
-import discord4j.core.object.entity.User;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-import java.time.ZonedDateTime;
 import java.util.Map;
 
-@Document("raid")
+@Document(collection = "raids")
 @Data
-@AllArgsConstructor
 @Builder
 public class Raid {
 
@@ -44,11 +38,6 @@ public class Raid {
     private String leadId;
 
     /**
-     * Discord User Object of the lead
-     */
-    private User lead;
-
-    /**
      * The difficulty of the raid (V, N, HM)
      */
     @Field(value = "difficulty")
@@ -61,15 +50,8 @@ public class Raid {
     private String raidTypeId;
 
     /**
-     * The raid type of the raid
+     * Epoch second timestamp for the raid
      */
-    private RaidType raidType;
-
-    /**
-     * The DateTime object for the raid
-     */
-    private ZonedDateTime zonedDateTime;
-
     @Field(name = "runDateTimestamp")
     private Long timestampInSeconds;
 
@@ -84,18 +66,4 @@ public class Raid {
      */
     @Field(name = "players")
     private Map<String, RosterRole> roster;
-
-    @PersistenceConstructor
-    public Raid(String id, String messageId, String guildId, String difficulty, String raidTypeId, Long timestampInSeconds,
-                   Map<String, Integer> availableRoles, Map<String, RosterRole> roster) {
-        super();
-        this.id = id;
-        this.messageId = messageId;
-        this.guildId = guildId;
-        this.difficulty = difficulty;
-        this.raidTypeId = raidTypeId;
-        this.timestampInSeconds = timestampInSeconds;
-        this.availableRoles = availableRoles;
-        this.roster = roster;
-    }
 }

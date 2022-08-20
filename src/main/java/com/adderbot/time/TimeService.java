@@ -30,14 +30,6 @@ public class TimeService {
         return getTimezoneRepository().findById(timezoneId).block();
     }
 
-    public String buildDateString(ZonedDateTime zonedDateTime) {
-        return zonedDateTime.format(DateTimeFormatter.ofPattern("MMMM d, yyyy"));
-    }
-
-    public String buildTimeString(ZonedDateTime zonedDateTime) {
-        return zonedDateTime.format(DateTimeFormatter.ofPattern("h:mma OOOO"));
-    }
-
     /**
      * Creates a timestamp in seconds using the given date, time, and timezone
      * @param date the date

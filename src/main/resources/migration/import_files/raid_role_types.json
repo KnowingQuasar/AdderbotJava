@@ -1,0 +1,146 @@
+[
+    {
+        "_id": "MT",
+        "category": "Tank",
+        "name": "Main Tank",
+        "displayPriority": 0,
+        "displayName": "MT",
+        "displayEmoji": "<:tank:995903872969212004>"
+    },
+    {
+        "_id": "OT",
+        "category": "Tank",
+        "name": "Off Tank",
+        "displayPriority": 1,
+        "displayName": "OT",
+        "displayEmoji": "<:tank:995903872969212004>"
+    },
+    {
+        "_id": "H1",
+        "category": "Healer",
+        "name": "Healer 1",
+        "displayPriority": 2,
+        "displayName": "H1",
+        "displayEmoji": "<:healer:993430373516197989>"
+    },
+    {
+        "_id": "H2",
+        "category": "Healer",
+        "name": "Healer 2",
+        "displayPriority": 3,
+        "displayName": "H2",
+        "displayEmoji": "<:healer:993430373516197989>"
+    },
+    {
+        "_id": "CH",
+        "category": "Healer",
+        "name": "Cage Healer",
+        "displayPriority": 4,
+        "displayName": "CH",
+        "displayEmoji": "<:healer:993430373516197989>"
+    },
+    {
+        "_id": "GH",
+        "category": "Healer",
+        "name": "Group Healer",
+        "displayPriority": 5,
+        "displayName": "GH",
+        "displayEmoji": "<:healer:993430373516197989>"
+    },
+    {
+        "_id": "TH",
+        "category": "Healer",
+        "name": "Tank Healer",
+        "displayPriority": 6,
+        "displayName": "TH",
+        "displayEmoji": "<:healer:993430373516197989>"
+    },
+    {
+        "_id": "KH",
+        "category": "Healer",
+        "name": "Kite Healer",
+        "displayPriority": 7,
+        "displayName": "KH",
+        "displayEmoji": "<:healer:993430373516197989>"
+    },
+    {
+        "_id": "DPS",
+        "category": "DPS",
+        "name": "Damage Dealer",
+        "displayPriority": 8,
+        "displayName": "DPS",
+        "displayEmoji": "<:dps:995903869328564314>"
+    },
+    {
+        "_id": "RDPS",
+        "category": "DPS",
+        "name": "Ranged Damage Dealer",
+        "displayPriority": 9,
+        "displayName": "Ranged",
+        "displayEmoji": ":comet:"
+    },
+    {
+        "_id": "MDPS",
+        "category": "DPS",
+        "name": "Melee Damage Dealer",
+        "displayPriority": 10,
+        "displayName": "Melee",
+        "displayEmoji": ":crossed_swords:"
+    },
+    {
+        "_id": "CRO",
+        "category": "DPS",
+        "name": "Necromancer Damage Dealer",
+        "displayPriority": 11,
+        "displayName": "Necro",
+        "displayEmoji": "<:necro:995908115159588884>"
+    },
+    {
+        "_id": "EC CRO",
+        "category": "DPS",
+        "name": "Elemental Catalyst Necro Damage Dealer",
+        "displayPriority": 12,
+        "displayName": "EC",
+        "displayEmoji": "<:ec:995903870226157618>"
+    },
+    {
+        "_id": "ALK DPS",
+        "category": "DPS",
+        "name": "Alkosh Damage Dealer",
+        "displayPriority": 13,
+        "displayName": "Alkosh",
+        "displayEmoji": "<:alkosh:995903868430995496>"
+    },
+    {
+        "_id": "ZEN DPS",
+        "category": "DPS",
+        "name": "Zens Damage Dealer",
+        "displayPriority": 14,
+        "displayName": "Zen",
+        "displayEmoji": "<:zen:995903873522864240>"
+    },
+    {
+        "_id": "BACKUP T",
+        "category": "Backup",
+        "name": "Backup Tank",
+        "displayPriority": 15,
+        "displayName": "Tank Backup",
+        "displayEmoji": "<:tank:995903872969212004>"
+    },
+    {
+        "_id": "BACKUP H",
+        "category": "Backup",
+        "name": "Backup Healer",
+        "displayPriority": 16,
+        "displayName": "Healer Backup",
+        "displayEmoji": "<:healer:993430373516197989>"
+    },
+    {
+        "_id": "BACKUP DPS",
+        "category": "Backup",
+        "name": "Backup Damage Dealer",
+        "displayPriority": 17,
+        "displayName": "DPS Backup",
+        "displayEmoji": "<:dps:995903869328564314>"
+    }
+]

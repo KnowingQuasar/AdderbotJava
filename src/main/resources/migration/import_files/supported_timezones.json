@@ -1,0 +1,42 @@
+[
+    {
+        "_id": "EST",
+        "name": "Eastern Standard Time",
+        "utc_offset": "-0500"
+    },
+    {
+        "_id": "EDT",
+        "name": "Eastern Daylight Time",
+        "utc_offset": "-0400"
+    },
+    {
+        "_id": "CST",
+        "name": "Central Standard Time",
+        "utc_offset": "-0600"
+    },
+    {
+        "_id": "CDT",
+        "name": "Central Daylight Time",
+        "utc_offset": "-0500"
+    },
+    {
+        "_id": "MST",
+        "name": "Mountain Standard Time",
+        "utc_offset": "-0700"
+    },
+    {
+        "_id": "MDT",
+        "name": "Mountain Daylight Time",
+        "utc_offset": "-0600"
+    },
+    {
+        "_id": "PST",
+        "name": "Pacific Standard Time",
+        "utc_offset": "-0800"
+    },
+    {
+        "_id": "PDT",
+        "name": "Pacific Daylight Time",
+        "utc_offset": "-0700"
+    }
+]

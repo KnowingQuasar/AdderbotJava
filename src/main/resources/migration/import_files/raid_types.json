@@ -1,0 +1,484 @@
+[
+    {
+        "_id": "AA",
+        "name": "Aetherian Archive",
+        "embed_color": "0x34c19e",
+        "non_hm": {
+            "expected_number_dps": 9,
+            "raid_roles": {
+                "MT": 1,
+                "H1": 1,
+                "H2": 1,
+                "DPS": 6,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        },
+        "hm": {
+            "expected_number_dps": 9,
+            "raid_roles": {
+                "MT": 1,
+                "H1": 1,
+                "H2": 1,
+                "DPS": 6,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "HRC",
+        "name": "Hel-ra Citadel",
+        "embed_color": "0x575958",
+        "non_hm": {
+            "expected_number_dps": 9,
+            "raid_roles": {
+                "MT": 1,
+                "H1": 1,
+                "H2": 1,
+                "DPS": 6,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        },
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "H1": 1,
+                "H2": 1,
+                "DPS": 5,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "SO",
+        "name": "Sanctum Ophidia",
+        "embed_color": "0x9ad134",
+        "non_hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "H1": 1,
+                "H2": 1,
+                "DPS": 5,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        },
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "H1": 1,
+                "H2": 1,
+                "DPS": 5,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "MoL",
+        "name": "Maw of Lorkhaj",
+        "embed_color": "0x8534d1",
+        "non_hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "H1": 1,
+                "H2": 1,
+                "RDPS": 3,
+                "MDPS": 2,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        },
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "H1": 1,
+                "H2": 1,
+                "RDPS": 3,
+                "MDPS": 2,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "HoF",
+        "name": "Halls of Fabrication",
+        "embed_color": "0xd19f34",
+        "non_hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "H1": 1,
+                "H2": 1,
+                "DPS": 5,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        },
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "H1": 1,
+                "H2": 1,
+                "DPS": 5,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "AS+0",
+        "name": "Asylum Sanctorium +0",
+        "embed_color": "0x875a0d",
+        "non_hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "GH": 1,
+                "TH": 1,
+                "RDPS": 6,
+                "CRO": 2
+            }
+        }
+    },
+    {
+        "_id": "AS+1",
+        "name": "Asylum Sanctorium +1",
+        "embed_color": "0x875a0d",
+        "non_hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "GH": 1,
+                "TH": 1,
+                "RDPS": 6,
+                "CRO": 2
+            }
+        }
+    },
+    {
+        "_id": "AS+2",
+        "name": "Asylum Sanctorium +0",
+        "embed_color": "0x875a0d",
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "GH": 1,
+                "TH": 1,
+                "RDPS": 6,
+                "CRO": 2
+            }
+        }
+    },
+    {
+        "_id": "CR+0",
+        "name": "Cloudrest +0",
+        "embed_color": "0x340d87",
+        "non_hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "GH": 1,
+                "KH": 1,
+                "RDPS": 6,
+                "CRO": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "CR+1",
+        "name": "Cloudrest +1",
+        "embed_color": "0x340d87",
+        "non_hm": {
+            "expected_number_dps": 7,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 2,
+                "GH": 1,
+                "KH": 1,
+                "RDPS": 5,
+                "CRO": 2
+            }
+        }
+    },
+    {
+        "_id": "CR+2",
+        "name": "Cloudrest +2",
+        "embed_color": "0x340d87",
+        "non_hm": {
+            "expected_number_dps": 7,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 2,
+                "GH": 1,
+                "KH": 1,
+                "RDPS": 5,
+                "CRO": 2
+            }
+        }
+    },
+    {
+        "_id": "CR+3",
+        "name": "Cloudrest +3",
+        "embed_color": "0x340d87",
+        "hm": {
+            "expected_number_dps": 7,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 2,
+                "GH": 1,
+                "KH": 1,
+                "RDPS": 5,
+                "CRO": 2
+            }
+        }
+    },
+    {
+        "_id": "SS",
+        "name": "Sunspire",
+        "embed_color": "0xba5009",
+        "non_hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "CH": 1,
+                "GH": 1,
+                "DPS": 5,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        },
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "CH": 1,
+                "GH": 1,
+                "DPS": 5,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "SS+L",
+        "name": "Sunspire Lokke HM",
+        "embed_color": "0xba5009",
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "CH": 1,
+                "GH": 1,
+                "DPS": 5,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "SS+Y",
+        "name": "Sunspire Yoln HM",
+        "embed_color": "0xba5009",
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "CH": 1,
+                "GH": 1,
+                "DPS": 5,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "SS+L+Y",
+        "name": "Sunspire Lokke & Yoln HM",
+        "embed_color": "0xba5009",
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "CH": 1,
+                "GH": 1,
+                "DPS": 5,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "KA",
+        "name": "Kyne's Aegis",
+        "embed_color": "0x871608",
+        "non_hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "H1": 1,
+                "H2": 1,
+                "DPS": 5,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        },
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "H1": 1,
+                "H2": 1,
+                "DPS": 5,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "KA+Y",
+        "name": "Kyne's Aegis Yandir HM",
+        "embed_color": "0x871608",
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "H1": 1,
+                "H2": 1,
+                "DPS": 5,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "KA+Y+V",
+        "name": "Kyne's Aegis Yandir & Vrol HM",
+        "embed_color": "0x871608",
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "H1": 1,
+                "H2": 1,
+                "DPS": 5,
+                "ZEN DPS": 1,
+                "ALK DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "RG",
+        "name": "Rockgrove",
+        "embed_color": "0xc910ad",
+        "non_hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "GH": 1,
+                "KH": 1,
+                "DPS": 6,
+                "ZEN DPS": 1,
+                "EC CRO": 1
+            }
+        },
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "GH": 1,
+                "KH": 1,
+                "DPS": 6,
+                "ZEN DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "RG+O",
+        "name": "Rockgrove Oax HM",
+        "embed_color": "0xc910ad",
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "GH": 1,
+                "KH": 1,
+                "DPS": 6,
+                "ZEN DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    },
+    {
+        "_id": "RG+O+B",
+        "name": "Rockgrove Oax & Bahsei HM",
+        "embed_color": "0xc910ad",
+        "hm": {
+            "expected_number_dps": 8,
+            "raid_roles": {
+                "MT": 1,
+                "OT": 1,
+                "GH": 1,
+                "KH": 1,
+                "DPS": 6,
+                "ZEN DPS": 1,
+                "EC CRO": 1
+            }
+        }
+    }
+]
